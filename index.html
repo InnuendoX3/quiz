@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <link href="style.css" rel="stylesheet">
+   <title>Quiz</title>
+</head>
+
+<body>
+
+   <header>
+      <h1>Quiz</h1>
+   </header>
+
+   <!--Form for user info / Qty questions-->
+   <section id="user-input-area">
+
+      <form>
+         <label for="username">Your name: </label>
+         <input type="text" id="username">
+
+         <label for="qty-questions">Questions: </label>
+         <input type="number" id="qty-questions" min="5" max="20">
+      </form>
+
+   </section>
+
+   <!--Question's area-->
+   <section id="question-area">
+      <h2>Question #</h2>
+      <p>
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+         Possimus rem repellat quod magni quas qui corrupti recusandae 
+         laborum libero voluptatibus, commodi laudantium officiis sunt aperiam 
+         aspernatur aliquam tenetur soluta repellendus?
+      </p>
+      <div id="answers-area">
+         <div>
+            <input type="radio" name="answers" id="answer1">
+            <span>Respuesta 1</span>
+         </div>
+         <div>
+            <input type="radio" name="answers" id="answer2">
+            <span>Respuesta 2</span>
+         </div>
+         <div>
+            <input type="radio" name="answers" id="answer3">
+            <span>Respuesta 3</span>
+         </div>
+         <div>
+            <input type="radio" name="answers" id="answer4">
+            <span>Respuesta 4</span>
+         </div>
+      </div>
+
+   </section>
+
+   <!--Information area-->
+   <section id="information-area">
+      <div>
+         <a href="#">1</a>
+         <a href="#">2</a>
+         <a href="#">3</a>
+         <a href="#">4</a>
+         <a href="#">5</a>
+      </div>
+   </section>
+
+
+</body>
+
+</html>
