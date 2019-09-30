@@ -64,6 +64,10 @@ input:invalid {
    align-items: center; 
 }
 
+#name-p {
+   width: 100%;
+   text-align: center;
+}
 
 /* Classes */
 .flex-row-center {
