@@ -24,6 +24,25 @@ h2{
    font-size: 32px;
 }
 
+/* Input Validation */
+input:invalid {
+   box-shadow: 0 0 5px 1px red;
+}
+
+#formulario {
+   max-width: 350px; 
+}
+
+#formulario label {
+   display: block;
+   margin: 10px 0px 2px;
+}
+#formulario input {
+   display: block;
+   margin: 5px 0px 5px;
+}
+
+
 #container {
    width: 800px;
    font-family: sans-serif;
@@ -42,7 +61,6 @@ h2{
 #user-input-area {
    width: 100%;
    max-width: 400px;
-   height: 200px;
    align-items: center; 
 }
 
@@ -68,7 +86,7 @@ h2{
 
 /* Copied from bestcssbuttongenerator.com */
 
-button {
+.myButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -94,7 +112,7 @@ button {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
 }
-button:hover {
+.myButton:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
 	background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
 	background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
@@ -104,10 +122,13 @@ button:hover {
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
 	background-color:#f6f6f6;
 }
-button:active {
+.myButton:active {
 	position:relative;
 	top:1px;
 }
+
+/*ToDo button:disabled ? */
+
 
 
 /* Responsive */

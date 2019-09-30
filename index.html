@@ -15,17 +15,14 @@
 
       <!--Form for user info / Qty questions-->
       <section id="user-input-area" class="flex-column">
-         <div>
-            <label for="username">Your name</label>
-            <input type="text" id="username">
-         </div>
-         <div>
-            <label for="qty-questions">Questions</label>
-            <input type="number" id="qty-questions" min="5" max="20">
-         </div>
-         <div>
-            <button type="submit">Start!</button>
-         </div>
+         <p>Enter your name and the number of questions you want to answer, min 5 / max 20.</p>
+         <form action="" id="formulario">
+               <label for="username">Name</label>
+               <input type="text" id="username">
+               <label for="qty-questions">Questions</label>
+               <input type="number" id="qty-questions" min="5" max="20">
+               <input type="submit" value="Submit" class="myButton" id="start-button">
+         </form>
       </section>
 
       <!--Question's area-->
@@ -74,8 +71,9 @@
             <button>5</button>
          </div>
       </section>
-
    </div>
+
+   <script src="script.js"></script>
 </body>
 
 </html>
