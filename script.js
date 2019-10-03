@@ -32,7 +32,6 @@ class Question {
    }
 }
 
-//Fråga
 class Answer {
    constructor(cAnswer, cIsRight) {
       this.answer = cAnswer;
@@ -40,58 +39,10 @@ class Answer {
    }
 }
 
+let theWholeQuiz = getJSON("http://www.mocky.io/v2/5d9647d233000003cd2f9028");
+console.log(theWholeQuiz);
+console.log(theWholeQuiz[2].question);
 
-//Testing all classes and are working
-
-respuestas1 = [
-   {
-      answer: "Azul",
-      isRight: false
-   },
-   {
-      answer: "Rojo",
-      isRight: false
-   },
-   {
-      answer: "Verde",
-      isRight: true
-   }
-]
-
-respuestas2 = [
-   {
-      answer: "Amariollo",
-      isRight: false
-   },
-   {
-      answer: "Azul",
-      isRight: true
-   },
-   {
-      answer: "Rojo",
-      isRight: true
-   }
-]
-
-
-let preguntas = [ 
-   {
-      category: "Colores",
-      question: "Color del pasto es: ",
-      answers: respuestas1
-   },
-   {
-      category: "Colores",
-      question: "De que colores sale el verde?",
-      answers: respuestas2
-   }
-]
-
-let cuestionario = new Quiz(preguntas);
-
-console.log(preguntas);
-console.log(typeof cuestionario); 
-console.log(cuestionario);
 
 /*
 // ContentLoader

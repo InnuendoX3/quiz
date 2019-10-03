@@ -1,0 +1,90 @@
+[
+   {
+      "category": "General",
+      "question": "What is the highest number used in a Sudoku puzzle?",
+      "answers": [
+         {
+            "answer": "9",
+            "isRight": true
+         },
+         {
+            "answer": "12",
+            "isRight": false
+         },
+         {
+            "answer": "10",
+            "isRight": false
+         },
+         {
+            "answer": "5",
+            "isRight": false
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "Which swimming stroke is named after an insect?",
+      "answers": [
+         {
+            "answer": "Spider",
+            "isRight": false
+         },
+         {
+            "answer": "Whale",
+            "isRight": false
+         },
+         {
+            "answer": "Butterfly",
+            "isRight": true
+         },
+         {
+            "answer": "Hummingbird",
+            "isRight": false
+         }
+      ]
+   },
+   {
+      "category": "Flags",
+      "question": "Colors of the Colombian flag",
+      "answers": [
+         {
+            "answer": "Blue",
+            "isRight": true
+         },
+         {
+            "answer": "Green",
+            "isRight": false
+         },
+         {
+            "answer": "Red",
+            "isRight": true
+         },
+         {
+            "answer": "Yellow",
+            "isRight": true
+         }
+      ]
+   },
+   {
+      "category": "Flags",
+      "question": "Colors of the Swedish flag",
+      "answers": [
+         {
+            "answer": "White",
+            "isRight": false
+         },
+         {
+            "answer": "Yellow",
+            "isRight": true
+         },
+         {
+            "answer": "Green",
+            "isRight": false
+         },
+         {
+            "answer": "Blue",
+            "isRight": true
+         }
+      ]
+   }
+]
