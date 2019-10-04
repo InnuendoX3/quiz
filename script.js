@@ -1,8 +1,10 @@
+// Classes
 class Quiz {
    constructor(cQuestions) {
-      this.username;
       this.questions = [];
       this.addQuestions(cQuestions);
+      this.username;
+      this.questionsChosen;
       this.rightQuestionsQty;
       this.wrongQuestionsQty;
    }
@@ -13,6 +15,24 @@ class Quiz {
          this.questions.push(q);
       }
    }
+
+   setUsername(username) {
+      this.username = username;
+   }
+
+   getUsername() { //Needed?
+      return this.username;
+   }
+
+   setQuestionsChosen(qChosen){
+      this.questionsChosen = qChosen;
+   }
+
+   getQuestionsChosen() { //Nedded?
+      return this.questionsChosen;
+   }
+
+
 }
 
 class Question {
@@ -39,44 +59,49 @@ class Answer {
    }
 }
 
-let theWholeQuiz = getJSON("http://www.mocky.io/v2/5d9647d233000003cd2f9028");
+// Paste here from Mocky!!!
+let fromJson = getJSON("http://www.mocky.io/v2/5d9647d233000003cd2f9028");
+let theWholeQuiz = new Quiz(fromJson);
+
 console.log(theWholeQuiz);
-console.log(theWholeQuiz[2].question);
 
 
-/*
+
+
+
+
 // ContentLoader
 
 document.addEventListener('DOMContentLoaded', function () {
    // HTML sections/areas
    let userInputArea = document.getElementById('user-input-area');
-   let questionArea = document.getElementById('question-area');
+   let questionArea = document.getElementById('q-container');
    let informationArea = document.getElementById('information-area');
 
    // HTML elements
    let formulario = document.getElementById("formulario");
-   let usernameEl = document.getElementById("username");
-   let username = "";
+   let usernameEl = document.getElementById("username");   
    let nameParagraph = document.getElementById("name-p");
-   let qtyEl = document.getElementById("qty-questions");
-   let qtyQuestions = 0;
+   let qtyEl = document.getElementById("qty-questions");   
    let qButtonsDiv = document.getElementById("q-buttons");
+
+   // Variables
 
 
    // Event listeners
-   formulario.addEventListener("submit", startGame);
+   formulario.addEventListener("submit", startQuiz);
 
 
    // Empieza todo
    displayIntro();
 
 
-   function startGame(event) {
+   function startQuiz(event) {
       // Stop refreshig page because of Form / 3 hours to fix it!
       event.preventDefault();
-      console.log("Username: " + usernameEl.value);
+      console.log("Username: " + usernameEl.value); //Borrar
       displayGame();
-      getNameAndQty();
+      getInfoForm();
 
    }
 
@@ -92,25 +117,24 @@ document.addEventListener('DOMContentLoaded', function () {
       informationArea.style.display = "flex";
    }
 
-   function getNameAndQty() { //works
-      //Name printing
-      username = usernameEl.value;
-      if (username == "")
-         username = "Hi";
-      nameParagraph.innerHTML = username + nameParagraph.innerHTML;
+   function getInfoForm() { //works
+      //Name
+      theWholeQuiz.setUsername(usernameEl.value);
+      nameParagraph.innerHTML = theWholeQuiz.getUsername() + nameParagraph.innerHTML;
 
       //Quantity questions
-      qtyQuestions = qtyEl.value;
-      console.log(qtyQuestions);
+      theWholeQuiz.setQuestionsChosen(qtyEl.value);
+      console.log("Preguntas unidades: " + theWholeQuiz.getQuestionsChosen());
+
+      /*
       for (let i = 0; i < qtyQuestions; i++) {
          var newButton = document.createElement("button");
          var numNode = document.createTextNode(i + 1);
          newButton.appendChild(numNode);
          qButtonsDiv.appendChild(newButton);
       }
+      */
    }
 
 
 })
-
-*/
