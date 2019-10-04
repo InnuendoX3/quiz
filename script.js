@@ -5,8 +5,10 @@ class Quiz {
       this.addQuestions(cQuestions);
       this.username;
       this.questionsChosen;
+      this.currentQuestionNr = 0;
       this.rightQuestionsQty;
       this.wrongQuestionsQty;
+
    }
 
    addQuestions(cQuestions) {
@@ -41,7 +43,7 @@ class Question {
       this.question = cQuestion;
       this.answers = [];
       this.addAnswers(cAnswers);
-
+      this.rightAnswered = false;  // testing if needed
    }
 
    addAnswers(cAnswers) {
@@ -87,13 +89,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
    // Variables
 
+   // Empieza todo
+   displayIntro();
 
    // Event listeners
    formulario.addEventListener("submit", startQuiz);
-
-
-   // Empieza todo
-   displayIntro();
 
 
    function startQuiz(event) {
@@ -102,6 +102,9 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log("Username: " + usernameEl.value); //Borrar
       displayGame();
       getInfoForm();
+
+      printNavButtons();
+      printEverything();
 
    }
 
@@ -117,24 +120,37 @@ document.addEventListener('DOMContentLoaded', function () {
       informationArea.style.display = "flex";
    }
 
+   // Get username and questions chosen and save them into the object
    function getInfoForm() { //works
       //Name
       theWholeQuiz.setUsername(usernameEl.value);
-      nameParagraph.innerHTML = theWholeQuiz.getUsername() + nameParagraph.innerHTML;
+      nameParagraph.innerHTML = theWholeQuiz.getUsername() + nameParagraph.innerHTML; //Do better
 
       //Quantity questions
       theWholeQuiz.setQuestionsChosen(qtyEl.value);
       console.log("Preguntas unidades: " + theWholeQuiz.getQuestionsChosen());
 
-      /*
-      for (let i = 0; i < qtyQuestions; i++) {
+      
+   }
+
+   // Create a button per question... to navigate
+   function printNavButtons() {
+      for (let i=0; i < theWholeQuiz.getQuestionsChosen(); i++) {
          var newButton = document.createElement("button");
-         var numNode = document.createTextNode(i + 1);
-         newButton.appendChild(numNode);
+         newButton.innerHTML = i + 1;
          qButtonsDiv.appendChild(newButton);
       }
-      */
    }
+
+   function printEverything() {
+      //Titulo
+      
+      //Pregunta
+
+      //Respuestas
+
+   }
+   
 
 
 })
