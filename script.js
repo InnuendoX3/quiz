@@ -34,6 +34,19 @@ class Quiz {
       return this.questionsChosen;
    }
 
+   getCurrentQuestionNr() {
+      return this.currentQuestionNr;
+   }
+
+   getQuestion() {
+      return this.questions[this.currentQuestionNr].question;
+   }
+
+   getAnswers() {
+      return this.questions[this.currentQuestionNr].answers;
+   }
+
+
 
 }
 
@@ -86,6 +99,12 @@ document.addEventListener('DOMContentLoaded', function () {
    let nameParagraph = document.getElementById("name-p");
    let qtyEl = document.getElementById("qty-questions");   
    let qButtonsDiv = document.getElementById("q-buttons");
+   let qNumberH2 = document.getElementById("q-number");
+   let questionHere = document.getElementById("question-here");
+   let labelA1 = document.getElementById("labelA1");
+   let labelA2 = document.getElementById("labelA2");
+   let labelA3 = document.getElementById("labelA3");
+   let labelA4 = document.getElementById("labelA4");
 
    // Variables
 
@@ -129,6 +148,8 @@ document.addEventListener('DOMContentLoaded', function () {
       //Quantity questions
       theWholeQuiz.setQuestionsChosen(qtyEl.value);
       console.log("Preguntas unidades: " + theWholeQuiz.getQuestionsChosen());
+      console.log("Preguntas unidades directas: " + theWholeQuiz.getQuestion());
+
 
       
    }
@@ -144,10 +165,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
    function printEverything() {
       //Titulo
-      
+      qNumberH2.innerHTML = "Question nr. " + (theWholeQuiz.getCurrentQuestionNr() + 1);
+
       //Pregunta
+      questionHere.innerHTML = theWholeQuiz.getQuestion();
 
       //Respuestas
+      let count = 0;
+      for (const iterator of theWholeQuiz.getAnswers()) {
+         let temp = eval("labelA" + count) //Makes each label: labelA1... labelA2...
+         temp.innerHTML = iterator.answer; 
+         console.log(temp.innerHTML);
+         count++;
+      }
+
 
    }
    

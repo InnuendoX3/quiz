@@ -20,33 +20,33 @@
                <label for="username">Name</label>
                <input type="text" id="username">
                <label for="qty-questions">Questions</label>
-               <input type="number" id="qty-questions" min="1" max="4">
+               <input type="number" id="qty-questions" min="5" max="20">
                <input type="submit" value="Submit" class="myButton">
          </form>
       </section>
 
       <!--Question's container-->
       <section id="q-container" class="flex-row-center">
-         <h2 class="title">Question #</h2>
+         <h2 class="title" id="q-number">Question #</h2>
          <p id="question-here">
             
          </p>
          <div id="answers-area">
             <div>
-               <input type="radio" name="answers" id="answer1">
-               <span>Respuesta respuesta 1</span>
+               <input type="checkbox" name="answers" id="answer0">
+               <label for="answer0" id="labelA0"></label>
             </div>
             <div>
-               <input type="radio" name="answers" id="answer2">
-               <span>Respuesdfsta 2</span>
+               <input type="checkbox" name="answers" id="answer1">
+               <label for="answer1" id="labelA1"></label>
             </div>
             <div>
-               <input type="radio" name="answers" id="answer3">
-               <span>Respue 3</span>
+               <input type="checkbox" name="answers" id="answer2">
+               <label for="answer2" id="labelA2"></label>
             </div>
             <div>
-               <input type="radio" name="answers" id="answer4">
-               <span>Respuestisdfasdfasdfsfdasdfca 4</span>
+               <input type="checkbox" name="answers" id="answer3">
+               <label for="answer3" id="labelA3"></label>
             </div>
          </div>
       </section>
