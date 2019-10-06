@@ -119,7 +119,7 @@ class Answer {
 
 
 // Paste here from Mocky!!!
-let fromJson = getJSON("http://www.mocky.io/v2/5d9647d233000003cd2f9028");
+let fromJson = getJSON("http://www.mocky.io/v2/5d9a42133100006b1397da86");
 let theWholeQuiz = new Quiz(fromJson);
 
 console.log(theWholeQuiz);
@@ -143,7 +143,6 @@ document.addEventListener('DOMContentLoaded', function () {
    let formulario = document.getElementById("formulario");
    let usernameEl = document.getElementById("username");
    let infoCorrect = document.getElementById("info-correct");
-   let infoWrong = document.getElementById("info-wrong");
    let infoAnswered = document.getElementById("info-answered");
    let qtyEl = document.getElementById("qty-questions");   
    let qButtonsDiv = document.getElementById("q-buttons");

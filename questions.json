@@ -1,22 +1,44 @@
 [
    {
       "category": "General",
-      "question": "What is the highest number used in a Sudoku puzzle?",
+      "question": "In which town do the Flintstones live?",
       "answers": [
          {
-            "answer": "9",
+            "answer": "Bedrock",
             "isRight": true
          },
          {
-            "answer": "12",
+            "answer": "Calirocknia",
             "isRight": false
          },
          {
-            "answer": "10",
+            "answer": "Rockeborg",
             "isRight": false
          },
          {
-            "answer": "5",
+            "answer": "Bogotá",
+            "isRight": false
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "What is the highest number used in a Sudoku puzzle?",
+      "answers": [
+         {
+            "answer": "Nine",
+            "isRight": true
+         },
+         {
+            "answer": "Twelve",
+            "isRight": false
+         },
+         {
+            "answer": "Ten",
+            "isRight": false
+         },
+         {
+            "answer": "Five",
             "isRight": false
          }
       ]
@@ -84,6 +106,446 @@
          {
             "answer": "Blue",
             "isRight": true
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "How many dots are used in each letter in the Braille system?",
+      "answers": [
+         {
+            "answer": "Five",
+            "isRight": false
+         },
+         {
+            "answer": "Seven",
+            "isRight": false
+         },
+         {
+            "answer": "Six",
+            "isRight": true
+         },
+         {
+            "answer": "Nine",
+            "isRight": false
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "What is the only bird that can hover in the air and also ﬂy backwards?",
+      "answers": [
+         {
+            "answer": "Hummingbird",
+            "isRight": true
+         },
+         {
+            "answer": "Crow",
+            "isRight": false
+         },
+         {
+            "answer": "Dove",
+            "isRight": false
+         },
+         {
+            "answer": "Sparrow",
+            "isRight": false
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "How many sides has an octagon?",
+      "answers": [
+         {
+            "answer": "Six",
+            "isRight": false
+         },
+         {
+            "answer": "Ten",
+            "isRight": false
+         },
+         {
+            "answer": "Eight",
+            "isRight": true
+         },
+         {
+            "answer": "Nine",
+            "isRight": false
+         }
+      ]
+   },
+   {
+      "category": "Flags",
+      "question": "Colors of the peruvian flag",
+      "answers": [
+         {
+            "answer": "Red",
+            "isRight": true
+         },
+         {
+            "answer": "Blue",
+            "isRight": false
+         },
+         {
+            "answer": "White",
+            "isRight": true
+         },
+         {
+            "answer": "Black",
+            "isRight": false
+         }
+      ]
+   },
+   {
+      "category": "Flags",
+      "question": "Colors of the finnish flag",
+      "answers": [
+         {
+            "answer": "Purple",
+            "isRight": false
+         },
+         {
+            "answer": "White",
+            "isRight": true
+         },
+         {
+            "answer": "Blue",
+            "isRight": true
+         },
+         {
+            "answer": "Yellow",
+            "isRight": false
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "How many years are involved in a silver anniversary?",
+      "answers": [
+         {
+            "answer": "30 years",
+            "isRight": false
+         },
+         {
+            "answer": "15 years",
+            "isRight": false
+         },
+         {
+            "answer": "25 years",
+            "isRight": true
+         },
+         {
+            "answer": "50 years",
+            "isRight": false
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "In Spain what is the word for an afternoon nap?",
+      "answers": [
+         {
+            "answer": "Perro",
+            "isRight": false
+         },
+         {
+            "answer": "Sol",
+            "isRight": false
+         },
+         {
+            "answer": "Avion",
+            "isRight": false
+         },
+         {
+            "answer": "Siesta",
+            "isRight": true
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "How long is there between rounds in boxing?",
+      "answers": [
+         {
+            "answer": "5 minutes",
+            "isRight": false
+         },
+         {
+            "answer": "30 seconds",
+            "isRight": false
+         },
+         {
+            "answer": "One minute",
+            "isRight": true
+         },
+         {
+            "answer": "Two minutes",
+            "isRight": false
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "Who of these main characters on the TV-serie 'Friends' where brothers?",
+      "answers": [
+         {
+            "answer": "Rachel",
+            "isRight": false
+         },
+         {
+            "answer": "Monica",
+            "isRight": true
+         },
+         {
+            "answer": "Ross",
+            "isRight": true
+         },
+         {
+            "answer": "Joey",
+            "isRight": false
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "What is the plural of the word sheep?",
+      "answers": [
+         {
+            "answer": "Sheepes",
+            "isRight": false
+         },
+         {
+            "answer": "Sheeps",
+            "isRight": false
+         },
+         {
+            "answer": "Shep",
+            "isRight": false
+         },
+         {
+            "answer": "Sheep",
+            "isRight": true
+         }
+      ]
+   },
+   {
+      "category": "Music",
+      "question": "Members of the band Metallica",
+      "answers": [
+         {
+            "answer": "Kirk Hammett",
+            "isRight": true
+         },
+         {
+            "answer": "Tom Morello",
+            "isRight": false
+         },
+         {
+            "answer": "Kurt Cobain",
+            "isRight": false
+         },
+         {
+            "answer": "James Hetfield",
+            "isRight": true
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "How many stomachs does a cow have?",
+      "answers": [
+         {
+            "answer": "Four",
+            "isRight": true
+         },
+         {
+            "answer": "Three",
+            "isRight": false
+         },
+         {
+            "answer": "Two",
+            "isRight": false
+         },
+         {
+            "answer": "One",
+            "isRight": false
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "In which game do you draw part of a gallows for every wrong answer?",
+      "answers": [
+         {
+            "answer": "Tic Tac Toe",
+            "isRight": false
+         },
+         {
+            "answer": "Hangman",
+            "isRight": true
+         },
+         {
+            "answer": "Fortnite",
+            "isRight": false
+         },
+         {
+            "answer": "Zelda",
+            "isRight": false
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "In which team game do you try to move backwards all the time?",
+      "answers": [
+         {
+            "answer": "Follow the lead",
+            "isRight": false
+         },
+         {
+            "answer": "Rock–paper–scissors",
+            "isRight": false
+         },
+         {
+            "answer": "Mario Kart",
+            "isRight": false
+         },
+         {
+            "answer": "Tug of War",
+            "isRight": true
+         }
+      ]
+   },
+   {
+      "category": "Music",
+      "question": "Members of the band Queen",
+      "answers": [
+         {
+            "answer": "John Deacon",
+            "isRight": true
+         },
+         {
+            "answer": "Brian May",
+            "isRight": true
+         },
+         {
+            "answer": "Freddie Mercury",
+            "isRight": true
+         },
+         {
+            "answer": "Rogert Taylor",
+            "isRight": true
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "What does an invertebrate not have?",
+      "answers": [
+         {
+            "answer": "Eyes",
+            "isRight": false
+         },
+         {
+            "answer": "A head",
+            "isRight": false
+         },
+         {
+            "answer": "A heart",
+            "isRight": false
+         },
+         {
+            "answer": "A backbone",
+            "isRight": true
+         }
+      ]
+   },
+   {
+      "category": "Music",
+      "question": "Members of the band The Rolling Stones",
+      "answers": [
+         {
+            "answer": "Johan Garzon",
+            "isRight": false
+         },
+         {
+            "answer": "Charlie Watts",
+            "isRight": true
+         },
+         {
+            "answer": "Keith Richards",
+            "isRight": true
+         },
+         {
+            "answer": "Ron Wood",
+            "isRight": true
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "Where is the South Pole located?",
+      "answers": [
+         {
+            "answer": "Antarctica",
+            "isRight": true
+         },
+         {
+            "answer": "Atlantis",
+            "isRight": false
+         },
+         {
+            "answer": "The Artic",
+            "isRight": false
+         },
+         {
+            "answer": "Colombia",
+            "isRight": false
+         }
+      ]
+   },
+   {
+      "category": "General",
+      "question": "Fe is the symbol of which chemical element?",
+      "answers": [
+         {
+            "answer": "Cobalt",
+            "isRight": false
+         },
+         {
+            "answer": "Iron",
+            "isRight": true
+         },
+         {
+            "answer": "Nickel",
+            "isRight": false
+         },
+         {
+            "answer": "Copper",
+            "isRight": false
+         }
+      ]
+   },
+   {
+      "category": "Music",
+      "question": "Members of the band Coldplay",
+      "answers": [
+         {
+            "answer": "Chris Martin",
+            "isRight": true
+         },
+         {
+            "answer": "Moohamed Samaae",
+            "isRight": false
+         },
+         {
+            "answer": "Alexandre Previ",
+            "isRight": false
+         },
+         {
+            "answer": "Mikael Olsson",
+            "isRight": false
          }
       ]
    }
