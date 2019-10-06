@@ -187,7 +187,8 @@ document.addEventListener('DOMContentLoaded', function () {
       userInputArea.style.display = "flex";
       questionArea.style.display = "none";
       navigationArea.style.display = "none";
-      informationArea.style.display = "none";      
+      informationArea.style.display = "none";
+      infoCorrect.style.display = "none";
    }
 
    function displayGame() { //works
@@ -311,9 +312,10 @@ document.addEventListener('DOMContentLoaded', function () {
       displayResults();
       readCheckboxes(); // To ensure the last question's answers are beign saved on 'checkboxes'
       showInformation();
-      trigerCorrectMethod();
-      
+      trigerCorrectMethod();      
       infoCorrect.innerHTML = "Correct answers: " + countRightAnswers() + " / " + theWholeQuiz.getQuestionsChosen();
+      infoCorrect.style.display = "block";
+      finishButton.style.display = "none";
 
       console.log(theWholeQuiz);
    }
