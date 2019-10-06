@@ -312,24 +312,27 @@ document.addEventListener('DOMContentLoaded', function () {
       displayResults();
       readCheckboxes(); // To ensure the last question's answers are beign saved on 'checkboxes'
       showInformation();
-      readCorrectAnswers();
-    /*  theWholeQuiz.questions[0].correct();
-      theWholeQuiz.questions[1].correct();
-      theWholeQuiz.questions[2].correct();
-      theWholeQuiz.questions[3].correct();
-      console.log(theWholeQuiz.questions[0].getRightAnswered())
-      console.log(theWholeQuiz.questions[1].getRightAnswered())
-      console.log(theWholeQuiz.questions[2].getRightAnswered())
-      console.log(theWholeQuiz.questions[3].getRightAnswered())
-      */
+      trigerCorrectMethod();
+      
+      infoCorrect.innerHTML = "Correct answers: " + countRightAnswers() + " / " + theWholeQuiz.getQuestionsChosen();
 
-     console.log(theWholeQuiz);
+      console.log(theWholeQuiz);
    }
-   function readCorrectAnswers() {
-      let counter = 0;
+
+   function trigerCorrectMethod() {
       for (const iterator of theWholeQuiz.questions) {
          iterator.correct();
       }
+   }
+
+   function countRightAnswers() {
+      let counter = 0;
+      for (const iterator of theWholeQuiz.questions) {
+         if (iterator.getRightAnswered())
+            counter++;
+      }
+
+      return counter;
 
    }
    
