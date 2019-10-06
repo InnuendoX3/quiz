@@ -59,9 +59,7 @@ class Question {
       this.answers = [];
       this.addAnswers(cAnswers);
       this.rightAnswered = false;  // testing if needed
-      this.checkboxes = []; // Save users checkbox answer per question (true/flase)
-      this.setCheckboxesAnswers();
-      this.getCheckboxesAnswers();
+      this.checkboxes = [false, false, false, false]; // Save users checkbox answer per question (true/flase)
    }
 
    addAnswers(cAnswers) {
@@ -188,6 +186,9 @@ document.addEventListener('DOMContentLoaded', function () {
             clearCheckboxes();
             changeQuestion(temp.innerHTML - 1); // Send the "index" of the question
             printEverything();  // Here?
+            writeOnCheckboxes();
+
+            console.log(theWholeQuiz);
 
          });
       }
@@ -205,16 +206,21 @@ document.addEventListener('DOMContentLoaded', function () {
             answersChecked[count] = false;
       }
 
-      theWholeQuiz.questions[theWholeQuiz.getCurrentQuestionNr()].setCheckboxesAnswers(answersChecked);
-      //borrar, estaba comprobando
-      console.log("via Objeto: " + theWholeQuiz.questions[theWholeQuiz.getCurrentQuestionNr()].getCheckboxesAnswers());
-      
+      theWholeQuiz.questions[theWholeQuiz.getCurrentQuestionNr()].setCheckboxesAnswers(answersChecked);    
    }
 
    function clearCheckboxes() {
       for (let count = 0; count <= 3; count++) {
          let answerFake = eval("answer" + count);
          answerFake.checked = false;
+      }
+   }
+
+   function writeOnCheckboxes() {
+      let checkboxesSaved = theWholeQuiz.questions[theWholeQuiz.getCurrentQuestionNr()].getCheckboxesAnswers();
+      for (let count = 0; count <= 3; count++) {
+         let answerFake = eval("answer" + count);
+         answerFake.checked = checkboxesSaved[count];
       }
    }
 
