@@ -221,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
          var newButton = document.createElement("button");
          newButton.innerHTML = i + 1;
          newButton.id = "button-answer" + i; // create an ID per button: butAns0...
+         newButton.classList.add("myButton");
          qButtonsDiv.appendChild(newButton);
 
          // Add to the button an event listener

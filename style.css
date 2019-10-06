@@ -2,12 +2,18 @@ html {
    box-sizing: border-box;
 }
 
+body {
+   background-color: #e7e7e7
+}
+
 section {
    margin: 5px 2px;
    padding: 10px 20px;
+
    /*Borders*/
    border-left: 5px double #848484;
    border-right: 5px double #848484;
+
    border-radius: 20px 5px 20px 5px;
 }
 
@@ -59,7 +65,7 @@ input:invalid {
 
 #q-container {
    width: 100%;
-   min-height: 300px;
+   min-height: 200px;
 }
 
 #user-input-area {
@@ -82,6 +88,7 @@ input:invalid {
 #question-here{
    width: 100%;
    text-align: center;
+   font-size: 18px;
 }
 
 /* Classes */
@@ -152,11 +159,15 @@ input:invalid {
 
 /* Responsive */
 @media only screen and (max-width: 380px) {
-   body {font-size: 14px;}
+   body {font-size: 14px;}   
 
    h1 {font-size: 44px;}
    
-   h2{font-size: 28px;}
+   h2 {font-size: 28px;}
 
    button {font-size: 14px;}
+
+   #question-here {font-size: 16px;}
+
+   .myButton {padding: 4px 16px;}
 }
