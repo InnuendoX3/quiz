@@ -60,6 +60,8 @@ class Question {
       this.addAnswers(cAnswers);
       this.rightAnswered = false;  // testing if needed
       this.checkboxes = []; // Save users checkbox answer per question (true/flase)
+      this.setCheckboxesAnswers();
+      this.getCheckboxesAnswers();
    }
 
    addAnswers(cAnswers) {
@@ -71,17 +73,12 @@ class Question {
 
    // Read users answers on checkboxes
    setCheckboxesAnswers(userAnswers) {
-      
-   }
-
-   // Clear all HTML checkboxes to could reload the question's answers (this.checkboxes)
-   clearCheckboxes() {
-      // Aqui no.
+      this.checkboxes = userAnswers;
    }
 
    // Send how user had answered the question
    getCheckboxesAnswers() {
-      return checkboxes;
+      return this.checkboxes;
    }
 }
 
@@ -92,21 +89,6 @@ class Answer {
    }
 }
 
-/*class Checkboxes {
-   constructor() {
-      this.checkboxes = [];
-   }
-
-   makeDiv() {
-      let div = document.createElement("div");
-      let checkbox = document.createElement("input");
-      checkbox.type = "checkbox";
-      let label = document.createElement("label");
-      /* aqui voy -- imprimirlos aqui sirve? 
-   }
-
-
-}*/
 
 // Paste here from Mocky!!!
 let fromJson = getJSON("http://www.mocky.io/v2/5d9647d233000003cd2f9028");
@@ -139,7 +121,11 @@ document.addEventListener('DOMContentLoaded', function () {
    let labelA2 = document.getElementById("labelA2"); // Nedeed?
    let labelA3 = document.getElementById("labelA3"); // Nedeed?
    let labelA4 = document.getElementById("labelA4"); // Nedeed?
-
+   let answer0 = document.getElementById("answer0"); // Needed?
+   let answer1 = document.getElementById("answer1"); // Needed?
+   let answer2 = document.getElementById("answer2"); // Needed?
+   let answer3 = document.getElementById("answer3"); // Needed?
+ // Needed?
 
    // Variables
 
@@ -183,11 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       //Quantity questions
       theWholeQuiz.setQuestionsChosen(qtyEl.value);
-      console.log("Preguntas unidades: " + theWholeQuiz.getQuestionsChosen());
-      console.log("Preguntas unidades directas: " + theWholeQuiz.getQuestion());
 
-
-      
    }
 
    // Create a button per question... to navigate. Add event listener per button.
@@ -202,18 +184,43 @@ document.addEventListener('DOMContentLoaded', function () {
          // Add to the button an event listener
          let temp = document.getElementById("button-answer" + i);
          temp.addEventListener("click", function() { 
-            changeQuestion(temp.innerHTML - 1); // Send the "index" of the question 
+            readCheckboxes();
+            clearCheckboxes();
+            changeQuestion(temp.innerHTML - 1); // Send the "index" of the question
+            printEverything();  // Here?
+
          });
       }
+   }
 
+
+   function readCheckboxes() {
+      let answersChecked = [];
+
+      for (let count = 0; count <= 3; count++) {      
+         let answerFake = eval("answer" + count) // Makes variabel's name: answer0... answer1
+         if (answerFake.checked)
+            answersChecked[count] = true;
+         else
+            answersChecked[count] = false;
+      }
+
+      theWholeQuiz.questions[theWholeQuiz.getCurrentQuestionNr()].setCheckboxesAnswers(answersChecked);
+      //borrar, estaba comprobando
+      console.log("via Objeto: " + theWholeQuiz.questions[theWholeQuiz.getCurrentQuestionNr()].getCheckboxesAnswers());
       
+   }
 
+   function clearCheckboxes() {
+      for (let count = 0; count <= 3; count++) {
+         let answerFake = eval("answer" + count);
+         answerFake.checked = false;
+      }
    }
 
    // Display a new question/answers depend on navigation-button
    function changeQuestion(i) {
       theWholeQuiz.setCurrentQuestionNr(i);
-      printEverything();  // Here?
    }
 
    function printEverything() {
@@ -226,9 +233,9 @@ document.addEventListener('DOMContentLoaded', function () {
       //Respuestas
       let count = 0;
       for (const iterator of theWholeQuiz.getAnswers()) {
-         let temp = eval("labelA" + count) //Makes each label: labelA1... labelA2...
-         temp.innerHTML = iterator.answer; 
-         console.log(temp.innerHTML);
+         let labelFake = eval("labelA" + count) //Makes label's name: labelA1... labelA2... to capture them
+         labelFake.innerHTML = iterator.answer; 
+         //console.log(temp.innerHTML);
          count++;
       }
 
