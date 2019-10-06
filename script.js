@@ -81,6 +81,10 @@ class Question {
       return this.checkboxes;
    }
 
+   getRightAnswered() {
+      return this.rightAnswered;
+   }
+
    isQuestionAnswered() {
       let counter = 0;
       for (const check of this.checkboxes) {
@@ -89,6 +93,18 @@ class Question {
          }
       }
       this.isAnswered = counter != 4 ? true : false;
+   }
+
+   // Take this.checkboxes (answers by user) and COMPARE with this.answers (correct answers)
+   // Return false or true into this.rightAnswered
+   correct() {
+      let fourIsCorrect = 0
+      for (let i = 0; i <= 3; i++) {
+         if (this.answers[i].isRight == this.checkboxes[i])
+            fourIsCorrect++;
+      }
+      console.log(fourIsCorrect);
+      this.rightAnswered = fourIsCorrect == 4 ? true : false;
    }
 
 
@@ -125,8 +141,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
    // HTML elements
    let formulario = document.getElementById("formulario");
-   let usernameEl = document.getElementById("username");   
-   let information = document.getElementById("information");
+   let usernameEl = document.getElementById("username");
+   let infoCorrect = document.getElementById("info-correct");
+   let infoWrong = document.getElementById("info-wrong");
+   let infoAnswered = document.getElementById("info-answered");
    let qtyEl = document.getElementById("qty-questions");   
    let qButtonsDiv = document.getElementById("q-buttons");
    let qNumberH2 = document.getElementById("q-number");
@@ -178,6 +196,11 @@ document.addEventListener('DOMContentLoaded', function () {
       questionArea.style.display = "flex";
       navigationArea.style.display = "flex";
       informationArea.style.display = "flex";
+   }
+
+   function displayResults() {
+      questionArea.style.display = "none";
+      navigationArea.style.display = "none";
    }
 
    // Get username and questions chosen and save them into the object
@@ -250,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function () {
    // Display how many questions are answered.
    function showInformation() {
       let answered = countAnswered();
-      information.innerHTML = "Answered: " + answered + " / " + theWholeQuiz.getQuestionsChosen();      
+      infoAnswered.innerHTML = "Answered: " + answered + " / " + theWholeQuiz.getQuestionsChosen();      
    }
 
    // Count how many has been answered
@@ -286,7 +309,28 @@ document.addEventListener('DOMContentLoaded', function () {
    }
 
    function showResults() {
-      
+      displayResults();
+      readCheckboxes(); // To ensure the last question's answers are beign saved on 'checkboxes'
+      showInformation();
+      readCorrectAnswers();
+    /*  theWholeQuiz.questions[0].correct();
+      theWholeQuiz.questions[1].correct();
+      theWholeQuiz.questions[2].correct();
+      theWholeQuiz.questions[3].correct();
+      console.log(theWholeQuiz.questions[0].getRightAnswered())
+      console.log(theWholeQuiz.questions[1].getRightAnswered())
+      console.log(theWholeQuiz.questions[2].getRightAnswered())
+      console.log(theWholeQuiz.questions[3].getRightAnswered())
+      */
+
+     console.log(theWholeQuiz);
+   }
+   function readCorrectAnswers() {
+      let counter = 0;
+      for (const iterator of theWholeQuiz.questions) {
+         iterator.correct();
+      }
+
    }
    
 

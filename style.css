@@ -68,7 +68,17 @@ input:invalid {
    align-items: center; 
 }
 
-#information {
+#info-correct {
+   width: 100%;
+   text-align: center;
+}
+
+#info-wrong {
+   width: 100%;
+   text-align: center;
+}
+
+#info-answered {
    width: 100%;
    text-align: center;
 }
