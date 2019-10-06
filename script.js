@@ -58,6 +58,7 @@ class Question {
       this.question = cQuestion;
       this.answers = [];
       this.addAnswers(cAnswers);
+      this.isAnswered = false;
       this.rightAnswered = false;  // testing if needed
       this.checkboxes = [false, false, false, false]; // Save users checkbox answer per question (true/flase)
    }
@@ -72,12 +73,25 @@ class Question {
    // Read users answers on checkboxes
    setCheckboxesAnswers(userAnswers) {
       this.checkboxes = userAnswers;
+      this.isQuestionAnswered();
    }
 
    // Send how user had answered the question
    getCheckboxesAnswers() {
       return this.checkboxes;
    }
+
+   isQuestionAnswered() {
+      let counter = 0;
+      for (const check of this.checkboxes) {
+         if(!check) {
+            counter++;
+         }
+      }
+      this.isAnswered = counter != 4 ? true : false;
+   }
+
+
 }
 
 class Answer {
@@ -105,16 +119,19 @@ document.addEventListener('DOMContentLoaded', function () {
    // HTML sections/areas
    let userInputArea = document.getElementById('user-input-area');
    let questionArea = document.getElementById('q-container');
+   let navigationArea = document.getElementById('navigation-area');
    let informationArea = document.getElementById('information-area');
+
 
    // HTML elements
    let formulario = document.getElementById("formulario");
    let usernameEl = document.getElementById("username");   
-   let nameParagraph = document.getElementById("name-p");
+   let information = document.getElementById("information");
    let qtyEl = document.getElementById("qty-questions");   
    let qButtonsDiv = document.getElementById("q-buttons");
    let qNumberH2 = document.getElementById("q-number");
    let questionHere = document.getElementById("question-here");
+   let finishButton = document.getElementById("finish-button");
    let labelA1 = document.getElementById("labelA1"); // Nedeed?
    let labelA2 = document.getElementById("labelA2"); // Nedeed?
    let labelA3 = document.getElementById("labelA3"); // Nedeed?
@@ -123,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
    let answer1 = document.getElementById("answer1"); // Needed?
    let answer2 = document.getElementById("answer2"); // Needed?
    let answer3 = document.getElementById("answer3"); // Needed?
- // Needed?
+
 
    // Variables
 
@@ -132,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
    // Event listeners
    formulario.addEventListener("submit", startQuiz);
+   finishButton.addEventListener("click", showResults);
 
 
 
@@ -144,18 +162,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
       printNavButtons();
       printEverything();
+      showInformation();
 
    }
 
    function displayIntro() { // works
       userInputArea.style.display = "flex";
       questionArea.style.display = "none";
-      informationArea.style.display = "none";
+      navigationArea.style.display = "none";
+      informationArea.style.display = "none";      
    }
 
    function displayGame() { //works
       userInputArea.style.display = "none";
       questionArea.style.display = "flex";
+      navigationArea.style.display = "flex";
       informationArea.style.display = "flex";
    }
 
@@ -163,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
    function getInfoForm() { //works
       //Name
       theWholeQuiz.setUsername(usernameEl.value);
-      nameParagraph.innerHTML = theWholeQuiz.getUsername() + nameParagraph.innerHTML; //Do better
+      // nameParagraph.innerHTML = theWholeQuiz.getUsername() + nameParagraph.innerHTML; //Do better
 
       //Quantity questions
       theWholeQuiz.setQuestionsChosen(qtyEl.value);
@@ -187,6 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
             changeQuestion(temp.innerHTML - 1); // Send the "index" of the question
             printEverything();  // Here?
             writeOnCheckboxes();
+            showInformation();
 
             console.log(theWholeQuiz);
 
@@ -194,10 +216,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
    }
 
-
+   // Read users answers from checkboxes
    function readCheckboxes() {
       let answersChecked = [];
-
       for (let count = 0; count <= 3; count++) {      
          let answerFake = eval("answer" + count) // Makes variabel's name: answer0... answer1
          if (answerFake.checked)
@@ -209,6 +230,7 @@ document.addEventListener('DOMContentLoaded', function () {
       theWholeQuiz.questions[theWholeQuiz.getCurrentQuestionNr()].setCheckboxesAnswers(answersChecked);    
    }
 
+   // Reset all checkboxes 
    function clearCheckboxes() {
       for (let count = 0; count <= 3; count++) {
          let answerFake = eval("answer" + count);
@@ -216,12 +238,29 @@ document.addEventListener('DOMContentLoaded', function () {
       }
    }
 
+   // Load checkboxes with the answer the user answered.
    function writeOnCheckboxes() {
       let checkboxesSaved = theWholeQuiz.questions[theWholeQuiz.getCurrentQuestionNr()].getCheckboxesAnswers();
       for (let count = 0; count <= 3; count++) {
          let answerFake = eval("answer" + count);
          answerFake.checked = checkboxesSaved[count];
       }
+   }
+
+   // Display how many questions are answered.
+   function showInformation() {
+      let answered = countAnswered();
+      information.innerHTML = "Answered: " + answered + " / " + theWholeQuiz.getQuestionsChosen();      
+   }
+
+   // Count how many has been answered
+   function countAnswered() {
+      let counter = 0;
+      for (const temp of theWholeQuiz.questions) {
+         if(temp.isAnswered)
+            counter++;
+      }
+      return counter;
    }
 
    // Display a new question/answers depend on navigation-button
@@ -243,8 +282,10 @@ document.addEventListener('DOMContentLoaded', function () {
          labelFake.innerHTML = iterator.answer; 
          //console.log(temp.innerHTML);
          count++;
-      }
+      }      
+   }
 
+   function showResults() {
       
    }
    

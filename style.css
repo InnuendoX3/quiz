@@ -49,6 +49,10 @@ input:invalid {
    align-items: center;
 }
 
+#navigation-area {
+   width: 100%;
+}
+
 #information-area {
    width: 100%;
 }
@@ -64,7 +68,7 @@ input:invalid {
    align-items: center; 
 }
 
-#name-p {
+#information {
    width: 100%;
    text-align: center;
 }
