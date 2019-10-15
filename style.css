@@ -11,10 +11,9 @@ section {
    padding: 10px 20px;
 
    /*Borders*/
-   border-left: 5px double #848484;
-   border-right: 5px double #848484;
+   border-top: 5px double #ffffff;
 
-   border-radius: 20px 5px 20px 5px;
+
 }
 
 header {
@@ -37,15 +36,28 @@ input:invalid {
 
 #formulario {
    max-width: 350px; 
+   display: flex;
+   flex-direction: column;
+   
 }
 
+/*
 #formulario label {
    display: block;
    margin: 10px 0px 2px;
 }
+*/
+
 #formulario input {
    display: block;
-   margin: 5px 0px 5px;
+   background-color: #e7e7e7;
+   margin: 5px 0px;
+   padding: 15px;
+   border-top: none;
+   border-left: none;
+   border-right: none;
+   border-bottom: 1px solid #f8f8f8;
+   
 }
 
 
@@ -71,7 +83,8 @@ input:invalid {
 #user-input-area {
    width: 100%;
    max-width: 400px;
-   align-items: center; 
+   align-items: center;
+   margin-top: 50px;
 }
 
 #info-correct {

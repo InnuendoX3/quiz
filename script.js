@@ -21,20 +21,19 @@ class Quiz {
    setUsername(username) {
       this.username = username;
    }
-   getUsername() { //Needed?
-      return this.username;
-   }
 
    setQuestionsChosen(qChosen){
       this.questionsChosen = qChosen;
    }
-   getQuestionsChosen() { //Nedded?
+
+   getQuestionsChosen() {
       return this.questionsChosen;
    }
 
    getCurrentQuestionNr() {
       return this.currentQuestionNr;
    }
+
    setCurrentQuestionNr(newCurrent) {
       this.currentQuestionNr = newCurrent;
    }
@@ -42,14 +41,10 @@ class Quiz {
    getQuestion() {
       return this.questions[this.currentQuestionNr].question;
    }
-
    
    getAnswers() {
       return this.questions[this.currentQuestionNr].answers;
    }
-
-
-
 }
 
 class Question {
@@ -59,7 +54,7 @@ class Question {
       this.answers = [];
       this.addAnswers(cAnswers);
       this.isAnswered = false;
-      this.rightAnswered = false;  // testing if needed
+      this.rightAnswered = false;
       this.checkboxes = [false, false, false, false]; // Save users checkbox answer per question (true/flase)
    }
 
@@ -106,8 +101,7 @@ class Question {
       console.log(fourIsCorrect);
       this.rightAnswered = fourIsCorrect == 4 ? true : false;
    }
-
-
+   
 }
 
 class Answer {
@@ -122,22 +116,14 @@ class Answer {
 let fromJson = getJSON("http://www.mocky.io/v2/5d9a42133100006b1397da86");
 let theWholeQuiz = new Quiz(fromJson);
 
-console.log(theWholeQuiz);
-
-
-
-
-
 
 // ContentLoader
-
 document.addEventListener('DOMContentLoaded', function () {
    // HTML sections/areas
    let userInputArea = document.getElementById('user-input-area');
    let questionArea = document.getElementById('q-container');
    let navigationArea = document.getElementById('navigation-area');
    let informationArea = document.getElementById('information-area');
-
 
    // HTML elements
    let formulario = document.getElementById("formulario");
@@ -159,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function () {
    let answer3 = document.getElementById("answer3"); // Needed?
 
 
-   // Variables
 
    // Empieza todo
    displayIntro();
@@ -168,22 +153,18 @@ document.addEventListener('DOMContentLoaded', function () {
    formulario.addEventListener("submit", startQuiz);
    finishButton.addEventListener("click", showResults);
 
-
-
    function startQuiz(event) {
       // Stop refreshig page because of Form / 3 hours to fix it!
       event.preventDefault();
-      console.log("Username: " + usernameEl.value); //Borrar
       displayGame();
       getInfoForm();
 
       printNavButtons();
       printEverything();
       showInformation();
-
    }
 
-   function displayIntro() { // works
+   function displayIntro() {
       userInputArea.style.display = "flex";
       questionArea.style.display = "none";
       navigationArea.style.display = "none";
@@ -191,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
       infoCorrect.style.display = "none";
    }
 
-   function displayGame() { //works
+   function displayGame() {
       userInputArea.style.display = "none";
       questionArea.style.display = "flex";
       navigationArea.style.display = "flex";
@@ -204,14 +185,12 @@ document.addEventListener('DOMContentLoaded', function () {
    }
 
    // Get username and questions chosen and save them into the object
-   function getInfoForm() { //works
+   function getInfoForm() {
       //Name
       theWholeQuiz.setUsername(usernameEl.value);
-      // nameParagraph.innerHTML = theWholeQuiz.getUsername() + nameParagraph.innerHTML; //Do better
 
       //Quantity questions
       theWholeQuiz.setQuestionsChosen(qtyEl.value);
-
    }
 
    // Create a button per question... to navigate. Add event listener per button.
@@ -233,9 +212,6 @@ document.addEventListener('DOMContentLoaded', function () {
             printEverything();  // Here?
             writeOnCheckboxes();
             showInformation();
-
-            console.log(theWholeQuiz);
-
          });
       }
    }
@@ -333,11 +309,7 @@ document.addEventListener('DOMContentLoaded', function () {
          if (iterator.getRightAnswered())
             counter++;
       }
-
       return counter;
-
    }
-   
-
 
 })
