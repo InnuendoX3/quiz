@@ -22,7 +22,8 @@ class Quiz {
       this.username = username;
    }
 
-   setQuestionsChosen(qChosen){
+   setQuestionsChosen(qChosen) {
+      qChosen = qChosen == "" ? 5 : qChosen; // If no "Nr. of questions" input from user set 5 as default
       this.questionsChosen = qChosen;
    }
 

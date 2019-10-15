@@ -81,10 +81,12 @@ input:invalid {
 }
 
 #user-input-area {
+
    width: 100%;
    max-width: 400px;
    align-items: center;
    margin-top: 50px;
+   padding-top: 40px;
 }
 
 #info-correct {
