@@ -3,15 +3,17 @@ html {
 }
 
 body {
-   background-color: #e7e7e7
+   background-color: #406658;
 }
 
 section {
-   margin: 5px 2px;
+   margin: 10px 2px;
    padding: 10px 20px;
+   background-color: #1D4838;
 
    /*Borders*/
-   border: 1px solid #ffffff;
+   border: 1px solid #406658;
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 header {
@@ -27,9 +29,20 @@ h2{
    font-size: 32px;
 }
 
+input[type="text"], input[type="number"] {
+   display: block;
+   background-color: #1D4838;
+   margin: 5px 0px;
+   padding: 15px;
+   border-top: none;
+   border-left: none;
+   border-right: none;
+   border-bottom: 1px solid #406658; 
+}
+
 /* Input Validation */
 input:invalid {
-   box-shadow: 0 0 5px 1px red;
+   box-shadow: 0 0 5px 1px #6B3F2B;
 }
 
 #formulario {
@@ -40,24 +53,8 @@ input:invalid {
    
 }
 
-/*
-#formulario label {
-   display: block;
-   margin: 10px 0px 2px;
-}
-*/
 
-#formulario input {
-   display: block;
-   background-color: #e7e7e7;
-   margin: 5px 0px;
-   padding: 15px;
-   border-top: none;
-   border-left: none;
-   border-right: none;
-   border-bottom: 1px solid #f8f8f8;
-   
-}
+
 
 
 #container {
